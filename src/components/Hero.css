@@ -1,0 +1,162 @@
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  z-index: 10;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-title {
+  font-size: 6rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  color: var(--text-main);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.btn-secondary {
+  padding: 0.8rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  color: #a0a0a0;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* Background Glowing Shapes */
+.bg-shape {
+  position: absolute;
+  filter: blur(60px);
+  z-index: 0;
+  opacity: 0.8;
+  border-radius: 20px;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.shape-cyan {
+  top: 20%;
+  right: 15%;
+  width: 250px;
+  height: 200px;
+  background: rgba(0, 229, 255, 0.4);
+  transform: rotate(15deg);
+  box-shadow: 0 0 100px rgba(0, 229, 255, 0.6);
+}
+
+.shape-yellow {
+  bottom: 15%;
+  left: 25%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 234, 0, 0.3);
+  box-shadow: 0 0 100px rgba(255, 234, 0, 0.5);
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(15deg);
+  }
+  100% {
+    transform: translateY(-40px) rotate(25deg);
+  }
+}
+
+/* Floating Tech Icons */
+.floating-icon {
+  position: absolute;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.15);
+  z-index: 1;
+}
+
+.icon-python { top: 25%; left: 15%; color: rgba(55, 118, 171, 0.3); }
+.icon-react { top: 60%; right: 20%; color: rgba(97, 218, 251, 0.3); font-size: 3rem; }
+.icon-js { top: 30%; right: 10%; color: rgba(247, 223, 30, 0.3); font-size: 2rem; }
+.icon-db { bottom: 25%; left: 25%; color: rgba(51, 103, 145, 0.3); font-size: 3.5rem; }
+.icon-code { top: 75%; left: 10%; color: rgba(0, 229, 255, 0.2); }
+
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 4.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .shape-cyan, .shape-yellow {
+    width: 150px;
+    height: 150px;
+    filter: blur(40px);
+  }
+}

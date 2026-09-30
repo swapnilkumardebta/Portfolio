@@ -1,0 +1,108 @@
+.experience-section {
+  position: relative;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-card {
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: var(--bg-card);
+}
+
+.experience-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(0, 229, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--accent-cyan), transparent);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover .card-indicator {
+  opacity: 1;
+  box-shadow: 0 0 15px var(--accent-cyan);
+}
+
+.exp-content {
+  margin-left: 1rem;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.exp-period {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.exp-location {
+  color: #666;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.exp-role {
+  font-size: 1.8rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.exp-company {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.exp-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-left: 1.2rem;
+}
+
+.exp-desc li {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.exp-desc li::marker {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 1.5rem;
+  }
+  
+  .exp-role {
+    font-size: 1.4rem;
+  }
+}

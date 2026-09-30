@@ -1,0 +1,93 @@
+.cursor-container {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
+
+.cursor-container.visible {
+  opacity: 1;
+}
+
+.cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, width, height, box-shadow, opacity;
+  background-color: var(--accent-cyan);
+  transition: width 0.25s ease, height 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+/* Base sizes, opacity, and glow for the 4 dots */
+.dot-0 {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  z-index: 4;
+}
+
+.dot-1 {
+  width: 6px;
+  height: 6px;
+  opacity: 0.8;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+  z-index: 3;
+}
+
+.dot-2 {
+  width: 5px;
+  height: 5px;
+  opacity: 0.6;
+  box-shadow: 0 0 6px rgba(0, 229, 255, 0.3);
+  z-index: 2;
+}
+
+.dot-3 {
+  width: 4px;
+  height: 4px;
+  opacity: 0.4;
+  box-shadow: 0 0 4px rgba(0, 229, 255, 0.2);
+  z-index: 1;
+}
+
+/* Hover effects (gradual scale and brightness) */
+.dot-0.hovering { width: 14px; height: 14px; box-shadow: 0 0 16px rgba(0, 229, 255, 0.8); background-color: rgba(0, 229, 255, 0.8); }
+.dot-1.hovering { width: 10px; height: 10px; box-shadow: 0 0 12px rgba(0, 229, 255, 0.7); background-color: rgba(0, 229, 255, 0.8); }
+.dot-2.hovering { width: 8px; height: 8px; box-shadow: 0 0 10px rgba(0, 229, 255, 0.6); background-color: rgba(0, 229, 255, 0.8); }
+.dot-3.hovering { width: 6px; height: 6px; box-shadow: 0 0 8px rgba(0, 229, 255, 0.5); background-color: rgba(0, 229, 255, 0.8); }
+
+/* Click effects (rapid scale and white flash) */
+.cursor-dot.clicking {
+  background-color: #ffffff;
+  transition: width 0.15s ease-out, height 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.15s ease-out;
+}
+
+.dot-0.clicking { width: 18px; height: 18px; box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); }
+.dot-1.clicking { width: 14px; height: 14px; box-shadow: 0 0 16px rgba(255, 255, 255, 0.8); }
+.dot-2.clicking { width: 10px; height: 10px; box-shadow: 0 0 12px rgba(255, 255, 255, 0.7); }
+.dot-3.clicking { width: 8px; height: 8px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); }
+
+/* Light Theme Adjustments */
+[data-theme='light'] .cursor-dot {
+  background-color: var(--accent-cyan);
+}
+[data-theme='light'] .dot-0 { box-shadow: 0 0 10px rgba(0, 136, 204, 0.5); }
+[data-theme='light'] .dot-1 { box-shadow: 0 0 8px rgba(0, 136, 204, 0.4); }
+[data-theme='light'] .dot-2 { box-shadow: 0 0 6px rgba(0, 136, 204, 0.3); }
+[data-theme='light'] .dot-3 { box-shadow: 0 0 4px rgba(0, 136, 204, 0.2); }
+
+[data-theme='light'] .cursor-dot.hovering {
+  background-color: rgba(0, 136, 204, 0.8);
+}
+[data-theme='light'] .dot-0.hovering { box-shadow: 0 0 16px rgba(0, 136, 204, 0.8); }
+[data-theme='light'] .dot-1.hovering { box-shadow: 0 0 12px rgba(0, 136, 204, 0.7); }
+[data-theme='light'] .dot-2.hovering { box-shadow: 0 0 10px rgba(0, 136, 204, 0.6); }
+[data-theme='light'] .dot-3.hovering { box-shadow: 0 0 8px rgba(0, 136, 204, 0.5); }
