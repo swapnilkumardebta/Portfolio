@@ -167,3 +167,30 @@
     font-size: 1.8rem;
   }
 }
+
+@media (max-width: 480px) {
+  .project-right {
+    padding: 1.5rem;
+  }
+  .project-title {
+    font-size: 1.5rem;
+  }
+  .visual-text {
+    font-size: 2.2rem;
+  }
+  .project-left {
+    min-height: 200px;
+  }
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+  }
+  .project-links {
+    flex-direction: column;
+  }
+  .btn-sm {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

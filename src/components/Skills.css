@@ -94,3 +94,24 @@
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 480px) {
+  .skills-playground {
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  .skill-block-normal {
+    width: 75px;
+    height: 75px;
+  }
+  .skill-block-large {
+    width: 90px;
+    height: 90px;
+  }
+  .skill-block-icon {
+    font-size: 1.5rem;
+  }
+  .skill-block-large .skill-block-icon {
+    font-size: 2rem;
+  }
+}

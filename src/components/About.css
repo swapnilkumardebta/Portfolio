@@ -201,3 +201,27 @@
     display: none; /* Hide icons on very small screens to avoid clutter */
   }
 }
+
+@media (max-width: 480px) {
+  .stat-metrics {
+    grid-template-columns: 1fr;
+  }
+  .profile-orbit-container {
+    width: 250px;
+    height: 250px;
+  }
+  .orbit-ring-outer {
+    width: 200px;
+    height: 200px;
+  }
+  .profile-center {
+    width: 100px;
+    height: 100px;
+  }
+  .profile-initials {
+    font-size: 2rem;
+  }
+  .stat-card {
+    padding: 1.5rem;
+  }
+}
