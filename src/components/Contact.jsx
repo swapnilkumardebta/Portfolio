@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -101,10 +101,6 @@ const Contact = () => {
             </p>
             
             <div className="contact-links">
-              <a href="mailto:swapnil.debta@example.com" className="contact-link">
-                <div className="contact-icon-wrapper"><FaEnvelope /></div>
-                <span>Email Me</span>
-              </a>
               <a href="https://www.linkedin.com/in/swapnil-kumar-debta/" target="_blank" rel="noopener noreferrer" className="contact-link">
                 <div className="contact-icon-wrapper"><FaLinkedin /></div>
                 <span>LinkedIn</span>

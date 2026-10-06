@@ -20,6 +20,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Contact Me', href: '#contact' },
   ];
 
   return (
@@ -44,11 +45,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </a>
           ))}
           
-          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
-            {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
-          </button>
-          
-          <a href="#contact" className="btn btn-primary nav-btn">Let's Talk</a>
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary nav-btn">View Resume</a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -80,11 +77,13 @@ const Navbar = ({ theme, toggleTheme }) => {
             </a>
           ))}
           <a 
-            href="#contact" 
+            href="/resume.pdf" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary mobile-btn"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Let's Talk
+            View Resume
           </a>
         </motion.div>
       )}
