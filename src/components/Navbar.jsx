@@ -45,7 +45,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </a>
           ))}
           
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary nav-btn">View Resume</a>
+          <a href="/Cv.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary nav-btn">View Resume</a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -77,7 +77,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </a>
           ))}
           <a 
-            href="/resume.pdf" 
+            href="/Cv.pdf" 
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary mobile-btn"
