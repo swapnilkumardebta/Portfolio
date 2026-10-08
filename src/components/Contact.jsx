@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  const emailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=swapnildebta556@gmail.com&su=Let's%20Work%20Together&body=Hi%20Swapnil,%0A%0AI'd%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you.%0A%0AThanks.";
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    // Simple check for Android or iOS devices
+    if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent)) {
+      setIsMobile(true);
+    }
+  }, []);
+
+  const recipient = 'swapnildebta556@gmail.com';
+  const subject = "Let's Work Together";
+  const body = `Hi Swapnil,\n\nI'd like to discuss a potential opportunity with you.\n\nThanks.`;
+  
+  // Standard mailto for mobile devices
+  const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  // Web compose for desktop devices
+  const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  const emailUrl = isMobile ? mailtoUrl : gmailWebUrl;
 
   return (
     <section id="contact" className="contact-section">
@@ -24,12 +43,13 @@ const Contact = () => {
             
             <a 
               href={emailUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              target={isMobile ? undefined : "_blank"}
+              rel={isMobile ? undefined : "noopener noreferrer"}
               className="btn btn-primary email-btn"
               aria-label="Email Me"
             >
-              <FaEnvelope /> Email Me
+              <FaEnvelope />
+              <span>Email Me</span>
             </a>
             
             <div className="contact-links">
